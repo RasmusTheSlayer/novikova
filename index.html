@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NOVIKOVA AI — Любовь Новикова</title>
+    <style>
+        @font-face {
+            font-family: 'Peace Sans';
+            src: url(assets/f1.ttf) format('truetype');
+            font-weight: 400;
+            font-display: swap
+        }
+
+        @font-face {
+            font-family: 'Caviar Dreams';
+            src: url(assets/f2.ttf) format('truetype');
+            font-weight: 400;
+            font-display: swap
+        }
+
+        @font-face {
+            font-family: 'Caviar Dreams';
+            src: url(assets/f3.ttf) format('truetype');
+            font-weight: 700;
+            font-display: swap
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        :root {
+            --bg: #0f0d0c;
+            --tx: #f2ede6;
+            --ac: #e2dbd0;
+            --mu: #aaa097;
+            --ln: #2e2926;
+            --g: linear-gradient(100deg, #b9aea1, #f3eee7 50%, #b9aea1)
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--tx);
+            font: 400 17px/1.65 'Caviar Dreams', Manrope, system-ui, sans-serif;
+            overflow-x: hidden
+        }
+
+        html[lang=ru] [data-l=en],
+        html[lang=en] [data-l=ru] {
+            display: none !important
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Peace Sans', Unbounded, Arial, sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 1.15;
+            color: var(--ac)
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 4vw;
+            background: linear-gradient(#0f0d0ccc, #0f0d0c00)
+        }
+
+        nav a {
+            color: var(--tx);
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            margin-left: 22px
+        }
+
+        nav .logo {
+            font: 400 13px 'Peace Sans', Unbounded, sans-serif;
+            margin: 0;
+            letter-spacing: .2em;
+            color: var(--ac)
+        }
+
+        .lb {
+            display: inline-flex;
+            margin-left: 20px;
+            border: 1px solid var(--ac);
+            border-radius: 20px;
+            overflow: hidden
+        }
+
+        .lb button {
+            background: none;
+            border: 0;
+            color: var(--tx);
+            padding: 6px 12px;
+            font: 700 11px 'Caviar Dreams', Manrope, sans-serif;
+            cursor: pointer
+        }
+
+        .lb .on {
+            background: var(--g);
+            color: #151210
+        }
+
+        .hero {
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5vw 7vh;
+            background: linear-gradient(0deg, #0f0d0c 2%, #0f0d0c00 55%), linear-gradient(#0f0d0c88, #0f0d0c00 25%), var(--h) 62% 20%/cover
+        }
+
+        .hero h1 {
+            font-size: clamp(24px, 4.6vw, 66px);
+            max-width: 16em;
+            margin: 0 auto
+        }
+
+        .mo {
+            color: var(--tx);
+            font-weight: 500;
+            font-size: clamp(14px, 1.6vw, 19px);
+            margin: 18px auto 28px;
+            max-width: 34em;
+            opacity: .9
+        }
+
+        .b {
+            display: inline-block;
+            padding: 20px 42px;
+            margin: 0 8px 12px;
+            background: var(--g);
+            color: #151210;
+            text-decoration: none;
+            font: 400 13px 'Peace Sans', Unbounded, sans-serif;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            border-radius: 40px;
+            border: 1px solid #b9aea1;
+            box-shadow: 0 0 30px #e2dbd01f;
+            transition: .3s
+        }
+
+        .b:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px #e2dbd03a
+        }
+
+        .b.o {
+            background: none;
+            color: var(--ac);
+            box-shadow: none
+        }
+
+        .b.o:hover {
+            background: var(--g);
+            color: #151210
+        }
+
+        .mq {
+            background: var(--g);
+            color: #151210;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 16px 0;
+            font: 400 13px 'Peace Sans', Unbounded, sans-serif;
+            letter-spacing: .08em
+        }
+
+        .mq div {
+            display: inline-block;
+            animation: mq 30s linear infinite
+        }
+
+        @keyframes mq {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        .qb {
+            background: var(--g);
+            color: #151210;
+            text-align: center;
+            padding: 5vh 6vw;
+            font: 400 clamp(14px, 2.2vw, 26px)/1.4 'Peace Sans', Unbounded, sans-serif;
+            text-transform: uppercase
+        }
+
+        .s {
+            padding: 9vh 5vw;
+            max-width: 1300px;
+            margin: auto
+        }
+
+        h2 {
+            font-size: clamp(20px, 3.2vw, 42px);
+            margin-bottom: 18px;
+            text-align: center
+        }
+
+        .sub {
+            color: var(--mu);
+            max-width: 42em;
+            margin: 0 auto 34px;
+            text-align: center
+        }
+
+        .rv {
+            padding-top: 7vh;
+            padding-bottom: 0;
+            max-width: 900px
+        }
+
+        .rv video {
+            width: 100%;
+            max-height: 78vh;
+            display: block;
+            background: #000;
+            border-radius: 26px;
+            border: 5px solid #cfc6ba;
+            box-shadow: 0 0 50px #e2dbd01a
+        }
+
+        .lt {
+            background: var(--bg)
+        }
+
+        .lt .in {
+            max-width: 1300px;
+            margin: auto;
+            padding: 9vh 5vw
+        }
+
+        .wg,
+        .st,
+        .ic {
+            display: grid;
+            gap: 16px
+        }
+
+        .wg {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+        }
+
+        .wg div,
+        .fr {
+            background: #1b1715;
+            border-radius: 26px;
+            padding: 26px 24px;
+            border: 1px solid #332d29;
+            position: relative
+        }
+
+        .wg h4,
+        .fr h4 {
+            font-size: 15px;
+            margin-bottom: 8px
+        }
+
+        .wg p,
+        .fr p {
+            font-size: 14.5px;
+            color: var(--mu)
+        }
+
+        .gv {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 26px;
+            text-align: center
+        }
+
+        .gv b {
+            display: block;
+            font: 400 22px 'Peace Sans', Unbounded, sans-serif;
+            color: var(--ac);
+            text-transform: uppercase;
+            margin-bottom: 6px
+        }
+
+        .gv small {
+            color: var(--mu);
+            font-size: 14px
+        }
+
+        .c {
+            margin-bottom: 9vh
+        }
+
+        .ch {
+            margin-bottom: 22px;
+            text-align: center
+        }
+
+        h3 {
+            font-size: clamp(18px, 2.6vw, 32px);
+            margin-bottom: 10px
+        }
+
+        .ch p {
+            color: var(--mu);
+            max-width: 40em;
+            margin: 0 auto 16px
+        }
+
+        .cw {
+            position: relative
+        }
+
+        .car {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            justify-content: flex-start
+        }
+
+        .car::-webkit-scrollbar {
+            display: none
+        }
+
+        .car img,
+        .car video {
+            height: min(66vh, 540px);
+            width: auto;
+            flex: none;
+            scroll-snap-align: center;
+            display: block;
+            background: #000;
+            border-radius: 14px
+        }
+
+        .ar {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 0;
+            background: #e9e9e9;
+            color: #111;
+            font-size: 26px;
+            line-height: 1;
+            cursor: pointer
+        }
+
+        .ar[data-d="-1"] {
+            left: 10px
+        }
+
+        .ar[data-d="1"] {
+            right: 10px
+        }
+
+        .ab {
+            display: grid;
+            grid-template-columns: minmax(240px, .8fr) 1.4fr;
+            gap: 5vw;
+            align-items: center
+        }
+
+        .ab img {
+            width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
+            display: block;
+            border-radius: 24px
+        }
+
+        .ab p {
+            margin-bottom: 16px;
+            color: #ddd5ca
+        }
+
+        ul {
+            list-style: none;
+            padding: 0
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--ln)
+        }
+
+        li:before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 1px;
+            background: var(--mu);
+            margin-right: 12px;
+            vertical-align: middle
+        }
+
+        .st {
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
+        }
+
+        .ic {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+        }
+
+        .fr small {
+            display: block;
+            color: var(--ac);
+            margin-bottom: 12px
+        }
+
+        .ic .fr p {
+            margin-top: 14px
+        }
+
+        .ic .fr li {
+            font-size: 14.5px;
+            color: #ddd5ca
+        }
+
+        .ct {
+            text-align: center;
+            padding: 14vh 5vw;
+            background: linear-gradient(#0f0d0cdd, #0f0d0caa), var(--h) center 20%/cover
+        }
+
+        .ct h2 {
+            max-width: 16em;
+            margin: 0 auto 30px
+        }
+
+        footer {
+            text-align: center;
+            color: var(--mu);
+            font-size: 12px;
+            padding: 24px 5vw;
+            line-height: 1.7
+        }
+
+        .r {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .8s, transform .8s
+        }
+
+        .r.in {
+            opacity: 1;
+            transform: none
+        }
+
+        video {
+            opacity: 1
+        }
+
+        .vwrap {
+            position: relative
+        }
+
+        .snd {
+            position: absolute;
+            right: 14px;
+            top: 14px;
+            z-index: 2;
+            background: var(--g);
+            color: #151210;
+            border: 0;
+            border-radius: 30px;
+            padding: 10px 16px;
+            font: 400 11px 'Peace Sans', Unbounded, sans-serif;
+            cursor: pointer
+        }
+
+        .wg small {
+            display: block;
+            color: var(--mu);
+            font-size: 11px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin: 4px 0 6px
+        }
+
+        h2.bd {
+            background: var(--g);
+            color: #151210;
+            padding: 20px 24px;
+            border-radius: 40px;
+            max-width: 680px;
+            margin: 0 auto 28px
+        }
+
+        .gc {
+            background: #1b1715;
+            border: 1px solid #332d29;
+            border-radius: 26px;
+            padding: 26px 22px
+        }
+
+        .gc b {
+            background: var(--g);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(20px, 2.4vw, 26px)
+        }
+
+        .ch h3 {
+            display: inline-block;
+            border: 1px solid var(--ac);
+            border-radius: 30px;
+            padding: 10px 26px;
+            font-size: clamp(15px, 2vw, 22px)
+        }
+
+        .nm {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--g);
+            color: #151210;
+            font: 400 14px 'Peace Sans', Unbounded, sans-serif;
+            margin-bottom: 14px
+        }
+
+        .cmp {
+            position: relative;
+            max-width: 560px;
+            margin: 0 auto 18px;
+            aspect-ratio: 3/4;
+            border-radius: 26px;
+            overflow: hidden;
+            border: 1px solid #332d29;
+            background: #000;
+            touch-action: pan-y
+        }
+
+        .cmp img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .cmp .top {
+            position: absolute;
+            inset: 0;
+            clip-path: inset(0 0 0 50%)
+        }
+
+        .cmp .ln {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            margin-left: -1px;
+            background: #f2ede6;
+            pointer-events: none
+        }
+
+        .cmp .kn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 44px;
+            height: 44px;
+            margin: -22px 0 0 -22px;
+            border-radius: 50%;
+            background: #171311;
+            border: 1px solid #f2ede6;
+            color: #f2ede6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            pointer-events: none
+        }
+
+        .cmp .cl1,
+        .cmp .cl2 {
+            position: absolute;
+            top: 14px;
+            padding: 10px 16px;
+            border-radius: 30px;
+            background: #151210cc;
+            color: #f2ede6;
+            font: 400 11px 'Peace Sans', Unbounded, sans-serif;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            pointer-events: none
+        }
+
+        .cmp .cl1 {
+            left: 14px
+        }
+
+        .cmp .cl2 {
+            right: 14px
+        }
+
+        .cmp input {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: ew-resize;
+            margin: 0;
+            z-index: 3
+        }
+
+        @media(max-width:800px) {
+            .ab {
+                grid-template-columns: 1fr
+            }
+
+            nav .m {
+                display: none
+            }
+
+            .s,
+            .lt .in {
+                padding: 6vh 5vw
+            }
+
+            .rv {
+                padding-top: 3vh
+            }
+
+            .car img,
+            .car video {
+                height: min(56vh, 420px)
+            }
+
+            .ar {
+                width: 38px;
+                height: 38px
+            }
+
+            .c {
+                margin-bottom: 6vh
+            }
+
+            .b {
+                padding: 18px 30px;
+                display: block;
+                margin: 0 auto 12px;
+                max-width: 340px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav><a class="logo" href="#">NOVIKOVA AI</a>
+        <div><a class="m" href="#work"><span data-l="ru">Работы</span><span data-l="en">Work</span></a><a class="m"
+                href="#about"><span data-l="ru">Обо мне</span><span data-l="en">About</span></a><a class="m"
+                href="#contact"><span data-l="ru">Контакты</span><span data-l="en">Contact</span></a><span
+                class="lb"><button data-k="ru">RU</button><button data-k="en">EN</button></span></div>
+    </nav>
+    <header class="hero" style="--h:url(assets/i01.webp)">
+        <div>
+            <h1><span data-l="ru">Ваш бренд в кадре без сложного продакшена</span><span data-l="en">Your brand in frame
+                    without complex production</span></h1>
+            <p class="mo"><span data-l="ru">Технология исполняет. Эстетика решает.</span><span data-l="en">Technology
+                    executes. Aesthetics decide.</span></p><a class="b" href="#work"><span data-l="ru">Смотреть
+                    работы</span><span data-l="en">View work</span></a><a class="b o" href="#contact"><span
+                    data-l="ru">Обсудить проект</span><span data-l="en">Discuss a project</span></a>
+        </div>
+    </header>
+    <section class="s rv">
+        <div class="vwrap"><video muted loop playsinline controls preload="metadata" poster="assets/i02.webp"
+                src="assets/v01.mp4"></video><button class="snd" id="snd"><span data-l="ru">Включить звук</span><span
+                    data-l="en">Sound on</span></button></div>
+    </section>
+    <div class="qb"><span data-l="ru">«Технология исполняет. Эстетика решает.»</span><span data-l="en">“Technology
+            executes. Aesthetics decide.”</span></div>
+    <section class="lt">
+        <div class="in">
+            <h2 class="r"><span data-l="ru">Кому подойдут мои услуги</span><span data-l="en">Who my services are
+                    for</span></h2>
+            <p class="sub r"><span data-l="ru">Работаю с брендами и компаниями, которым нужен сильный визуал без
+                    сложного продакшена. Вот для кого и что именно я создаю.</span><span data-l="en">I work with brands
+                    and companies that need strong visuals without complex production. Here is who I work for and what I
+                    create.</span></p>
+            <div class="wg r">
+                <div>
+                    <h4><span data-l="ru">Fashion-бренды и дизайнеры одежды</span><span data-l="en">Fashion brands &
+                            clothing designers</span></h4><small><span data-l="ru">Что я могу сделать</span><span
+                            data-l="en">What I can do</span></small>
+                    <p><span data-l="ru">Создаю лукбуки, рекламные кампании и образы без студии и съёмочной
+                            группы.</span><span data-l="en">I create lookbooks, ad campaigns and looks without a studio
+                            or shooting crew.</span></p>
+                </div>
+                <div>
+                    <h4><span data-l="ru">Beauty и косметические бренды</span><span data-l="en">Beauty & cosmetic
+                            brands</span></h4><small><span data-l="ru">Что я могу сделать</span><span data-l="en">What I
+                            can do</span></small>
+                    <p><span data-l="ru">Делаю продуктовые визуалы, текстуры и рекламные ролики для
+                            запусков.</span><span data-l="en">I make product visuals, textures and ad films for
+                            launches.</span></p>
+                </div>
+                <div>
+                    <h4><span data-l="ru">Ювелирные бренды и производители аксессуаров</span><span data-l="en">Jewelry
+                            brands & accessory makers</span></h4><small><span data-l="ru">Что я могу сделать</span><span
+                            data-l="en">What I can do</span></small>
+                    <p><span data-l="ru">Создаю имиджевые кадры и видео с крупными планами для каталогов и
+                            соцсетей.</span><span data-l="en">I create image frames and close-up films for catalogs and
+                            social media.</span></p>
+                </div>
+                <div>
+                    <h4><span data-l="ru">Бренды белья и купальников</span><span data-l="en">Lingerie & swimwear
+                            brands</span></h4><small><span data-l="ru">Что я могу сделать</span><span data-l="en">What I
+                            can do</span></small>
+                    <p><span data-l="ru">Готовлю рекламные кампании и раскадровки роликов.</span><span data-l="en">I
+                            prepare ad campaigns and film storyboards.</span></p>
+                </div>
+                <div>
+                    <h4><span data-l="ru">Музыканты, лейблы и артисты</span><span data-l="en">Musicians, labels &
+                            artists</span></h4><small><span data-l="ru">Что я могу сделать</span><span data-l="en">What
+                            I can do</span></small>
+                    <p><span data-l="ru">Создаю визуальные сниппеты для релизов и соцсетей.</span><span data-l="en">I
+                            create visual snippets for releases and social media.</span></p>
+                </div>
+                <div>
+                    <h4><span data-l="ru">Актёры, модели и публичные персоны</span><span data-l="en">Actors, models &
+                            public figures</span></h4><small><span data-l="ru">Что я могу сделать</span><span
+                            data-l="en">What I can do</span></small>
+                    <p><span data-l="ru">Разрабатываю новый образ и переношу внешность в выбранную визуальную
+                            историю.</span><span data-l="en">I develop a new image and carry the appearance into a
+                            chosen visual story.</span></p>
+                </div>
+                <div>
+                    <h4><span data-l="ru">Рекламные агентства и маркетинговые команды</span><span data-l="en">Ad
+                            agencies & marketing teams</span></h4><small><span data-l="ru">Что я могу
+                            сделать</span><span data-l="en">What I can do</span></small>
+                    <p><span data-l="ru">Предлагаю идеи, концепции и креативы для рекламных кампаний.</span><span
+                            data-l="en">I offer ideas, concepts and creatives for ad campaigns.</span></p>
+                </div>
+                <div>
+                    <h4><span data-l="ru">Digital-бренды и онлайн-проекты</span><span data-l="en">Digital brands &
+                            online projects</span></h4><small><span data-l="ru">Что я могу сделать</span><span
+                            data-l="en">What I can do</span></small>
+                    <p><span data-l="ru">Выпускаю reels и short-form контент под любые платформы.</span><span
+                            data-l="en">I produce reels and short-form content for any platform.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s">
+        <h2 class="r bd"><span data-l="ru">Что это даёт бренду</span><span data-l="en">What it gives your brand</span>
+        </h2>
+        <div class="gv r">
+            <div class="gc"><b><span data-l="ru">Скорость</span><span data-l="en">контент за короткий
+                        срок</span></b><small><span data-l="ru">Speed</span><span data-l="en">content in a short
+                        time</span></small></div>
+            <div class="gc"><b><span data-l="ru">Оптимизация</span><span data-l="en">меньше затрат, без сложного
+                        продакшена</span></b><small><span data-l="ru">Efficiency</span><span data-l="en">lower costs, no
+                        heavy production</span></small></div>
+            <div class="gc"><b><span data-l="ru">Адаптивность</span><span data-l="en">гибкий визуал под любые
+                        digital-форматы</span></b><small><span data-l="ru">Flexibility</span><span data-l="en">visuals
+                        for any digital format</span></small></div>
+            <div class="gc"><b><span data-l="ru">Подход</span><span data-l="en">эстетика нового
+                        поколения</span></b><small><span data-l="ru">Approach</span><span data-l="en">next-generation
+                        aesthetics</span></small></div>
+        </div>
+    </section>
+    <section id="work" class="s">
+        <h2 class="r bd"><span data-l="ru">Кейсы</span><span data-l="en">Cases</span></h2>
+        <p class="sub r"><span data-l="ru">Кампейны, рекламные ролики, предметная визуализация, портреты и журнальные
+                проекты.</span><span data-l="en">Campaigns, ad films, product visuals, portraits and magazine
+                projects.</span></p>
+        <article class="c">
+            <div class="ch r">
+                <h3><span data-l="ru">AI-лукбуки</span><span data-l="en">AI lookbooks</span></h3>
+                <p><span data-l="ru">Образы для брендов одежды: от реального товара к рекламному лукбуку, без студии,
+                        моделей и локаций.</span><span data-l="en">Looks for clothing brands: from a real product to an
+                        ad lookbook, with no studio, models or locations.</span></p>
+            </div>
+            <div class="cw r"><button class="ar" data-d="-1" aria-label="prev">‹</button>
+                <div class="car"><img loading="lazy" alt="" src="assets/i03.webp" width="506" height="900"><img
+                        loading="lazy" alt="" src="assets/i04.webp" width="696" height="900"><img loading="lazy" alt=""
+                        src="assets/i05.webp" width="675" height="900"><img loading="lazy" alt="" src="assets/i06.webp"
+                        width="675" height="900"></div><button class="ar" data-d="1" aria-label="next">›</button>
+            </div>
+        </article>
+        <article class="c">
+            <div class="ch r">
+                <h3><span data-l="ru">Предметная визуализация</span><span data-l="en">Product visuals</span></h3>
+                <p><span data-l="ru">Продуктовые кадры в эстетике fashion-production: свет, фактуры, атмосфера и
+                        узнаваемый бренд в кадре.</span><span data-l="en">Product frames in a fashion-production
+                        aesthetic: light, texture, mood and the brand clearly in frame.</span></p>
+            </div>
+            <div class="cw r"><button class="ar" data-d="-1" aria-label="prev">‹</button>
+                <div class="car"><img loading="lazy" alt="" src="assets/i07.webp" width="672" height="900"><img
+                        loading="lazy" alt="" src="assets/i08.webp" width="672" height="900"><img loading="lazy" alt=""
+                        src="assets/i09.webp" width="725" height="900"><img loading="lazy" alt="" src="assets/i10.webp"
+                        width="725" height="900"></div><button class="ar" data-d="1" aria-label="next">›</button>
+            </div>
+        </article>
+        <article class="c">
+            <div class="ch r">
+                <h3><span data-l="ru">Бельё и купальники</span><span data-l="en">Lingerie & swimwear</span></h3>
+                <p><span data-l="ru">Рекламные кампании и раскадровки роликов, созданные на
+                        нейропродакшн-уровне.</span><span data-l="en">Ad campaigns and film storyboards produced at a
+                        neuro-production level.</span></p>
+            </div>
+            <div class="cw r"><button class="ar" data-d="-1" aria-label="prev">‹</button>
+                <div class="car"><img loading="lazy" alt="" src="assets/i11.webp" width="506" height="900"><video muted
+                        loop playsinline preload="metadata" poster="assets/i12.webp" src="assets/v02.mp4" width="480"
+                        height="854"></video><video muted loop playsinline preload="metadata" poster="assets/i13.webp"
+                        src="assets/v03.mp4" width="480" height="854"></video></div><button class="ar" data-d="1"
+                    aria-label="next">›</button>
+            </div>
+        </article>
+        <article class="c">
+            <div class="ch r">
+                <h3><span data-l="ru">Ювелирные бренды и Beauty</span><span data-l="en">Jewelry brands & beauty</span>
+                </h3>
+                <p><span data-l="ru">Украшения и уход: крупные планы, мягкий свет, визуал для запусков и
+                        соцсетей.</span><span data-l="en">Jewelry and skincare: close-ups, soft light, visuals for
+                        launches and social media.</span></p>
+            </div>
+            <div class="cw r"><button class="ar" data-d="-1" aria-label="prev">‹</button>
+                <div class="car"><video muted loop playsinline preload="metadata" poster="assets/i14.webp"
+                        src="assets/v04.mp4" width="480" height="854"></video><video muted loop playsinline
+                        preload="metadata" poster="assets/i15.webp" src="assets/v05.mp4" width="480"
+                        height="854"></video><video muted loop playsinline preload="metadata" poster="assets/i16.webp"
+                        src="assets/v06.mp4" width="480" height="854"></video></div><button class="ar" data-d="1"
+                    aria-label="next">›</button>
+            </div>
+        </article>
+        <article class="c">
+            <div class="ch r">
+                <h3><span data-l="ru">Рекламные ролики и reels</span><span data-l="en">Ad films & reels</span></h3>
+                <p><span data-l="ru">Нейро-реклама и short-form для запусков, соцсетей и
+                        digital-коммуникации.</span><span data-l="en">AI-driven ads and short-form content for launches,
+                        social media and digital communication.</span></p><a class="b o" target="_blank" rel="noopener"
+                    href="https://www.instagram.com/p/DbLz_DRCltH/"><span data-l="ru">Смотреть кампейн GATE
+                        31</span><span data-l="en">Watch the GATE 31 campaign</span></a>
+            </div>
+            <div class="cw r"><button class="ar" data-d="-1" aria-label="prev">‹</button>
+                <div class="car"><video muted loop playsinline preload="metadata" poster="assets/i17.webp"
+                        src="assets/v07.mp4" width="480" height="852"></video><video muted loop playsinline
+                        preload="metadata" poster="assets/i18.webp" src="assets/v08.mp4" width="480"
+                        height="852"></video><video muted loop playsinline preload="metadata" poster="assets/i19.webp"
+                        src="assets/v09.mp4" width="480" height="852"></video></div><button class="ar" data-d="1"
+                    aria-label="next">›</button>
+            </div>
+        </article>
+        <article class="c">
+            <div class="ch r">
+                <h3><span data-l="ru">Коммерческий реализм</span><span data-l="en">Commercial realism</span></h3>
+                <p><span data-l="ru">Портретные кадры уровня fashion-съёмки для рекламы и каталогов.</span><span
+                        data-l="en">Fashion-shoot-level portraits for advertising and catalogs.</span></p>
+            </div>
+            <div class="cw r"><button class="ar" data-d="-1" aria-label="prev">‹</button>
+                <div class="car"><img loading="lazy" alt="" src="assets/i20.webp" width="675" height="900"><img
+                        loading="lazy" alt="" src="assets/i21.webp" width="675" height="900"><img loading="lazy" alt=""
+                        src="assets/i22.webp" width="675" height="900"><img loading="lazy" alt="" src="assets/i23.webp"
+                        width="675" height="900"></div><button class="ar" data-d="1" aria-label="next">›</button>
+            </div>
+        </article>
+        <article class="c">
+            <div class="ch r">
+                <h3><span data-l="ru">Перенос внешности</span><span data-l="en">Appearance transfer</span></h3>
+                <p><span data-l="ru">Образ артиста или модели в новой визуальной истории с сохранением узнаваемой
+                        внешности.</span><span data-l="en">An artist’s or model’s look in a new visual story, with their
+                        recognizable appearance preserved.</span></p>
+            </div>
+            <div class="cmp r"><img alt="" src="assets/i24.webp">
+                <div class="top"><img alt="" src="assets/i25.webp"></div><span class="ln"></span><span
+                    class="kn">⇔</span><span class="cl1"><span data-l="ru">Оригинал</span><span
+                        data-l="en">Original</span></span><span class="cl2"><span data-l="ru">AI-результат</span><span
+                        data-l="en">AI result</span></span><input type="range" min="0" max="100" value="50"
+                    aria-label="compare">
+            </div>
+            <div class="cw r"><button class="ar" data-d="-1" aria-label="prev">‹</button>
+                <div class="car"><img loading="lazy" alt="" src="assets/i26.webp" width="675" height="900"><img
+                        loading="lazy" alt="" src="assets/i27.webp" width="675" height="900"><img loading="lazy" alt=""
+                        src="assets/i28.webp" width="675" height="900"><img loading="lazy" alt="" src="assets/i29.webp"
+                        width="675" height="900"></div><button class="ar" data-d="1" aria-label="next">›</button>
+            </div>
+        </article>
+    </section>
+    <section id="about" class="s">
+        <h2 class="r"><span data-l="ru">Обо мне</span><span data-l="en">About me</span></h2>
+        <div class="ab"><img class="r" alt="" src="assets/i30.webp">
+            <div class="r">
+                <p><span data-l="ru">Любовь Новикова — нейрокреатор и режиссёр, создатель современных визуальных
+                        проектов с использованием нейросетевых технологий.</span><span data-l="en">Lyubov Novikova is a
+                        neurocreator and director, creating contemporary visual projects with neural-network
+                        technologies.</span></p>
+                <p><span data-l="ru">От AI-fashion campaign до digital-проектов и reels для брендов. Помогаю
+                        реализовывать визуальные концепции без сложного классического продакшн-процесса.</span><span
+                        data-l="en">From AI fashion campaigns to digital projects and reels for brands. I help bring
+                        visual concepts to life without a heavy classic production process.</span></p>
+                <ul>
+                    <li><span data-l="ru">стратегический креатив</span><span data-l="en">strategic creativity</span>
+                    </li>
+                    <li><span data-l="ru">сильная визуальная эстетика</span><span data-l="en">strong visual
+                            aesthetics</span></li>
+                    <li><span data-l="ru">AI как инструмент, а не эффект</span><span data-l="en">AI as a tool, not an
+                            effect</span></li>
+                    <li><span data-l="ru">понимание актуальной digital-среды</span><span data-l="en">understanding of
+                            the current digital landscape</span></li>
+                    <li><span data-l="ru">контент с фокусом на коммерческий результат</span><span data-l="en">content
+                            focused on commercial results</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="s">
+        <h2 class="r"><span data-l="ru">Журналы и обложки</span><span data-l="en">Magazines & covers</span></h2>
+        <p class="sub r"><span data-l="ru">Имею опыт работы с редакционными изданиями: обложки и
+                editorial-проекты.</span><span data-l="en">I have experience working with editorial publications: covers
+                and editorial projects.</span></p>
+        <div class="cw r"><button class="ar" data-d="-1" aria-label="prev">‹</button>
+            <div class="car"><img loading="lazy" alt="" src="assets/i31.webp" width="696" height="900"><img
+                    loading="lazy" alt="" src="assets/i32.webp" width="696" height="900"><img loading="lazy" alt=""
+                    src="assets/i33.webp" width="675" height="900"></div><button class="ar" data-d="1"
+                aria-label="next">›</button>
+        </div>
+    </section>
+    <section class="lt">
+        <div class="in">
+            <h2 class="r"><span data-l="ru">Как строится работа</span><span data-l="en">How we work</span></h2>
+            <div class="st">
+                <div class="fr r"><span class="nm">01</span>
+                    <h4><span data-l="ru">Бриф</span><span data-l="en">Brief</span></h4>
+                    <p><span data-l="ru">Обсуждаем задачи бренда, аудиторию, референсы, сроки и техническое
+                            задание.</span><span data-l="en">We discuss brand goals, audience, references, deadlines and
+                            the technical task.</span></p>
+                </div>
+                <div class="fr r"><span class="nm">02</span>
+                    <h4><span data-l="ru">Смета и договор</span><span data-l="en">Estimate & contract</span></h4>
+                    <p><span data-l="ru">На основе референсов составляю смету. Согласуем стоимость и сроки и заключаем
+                            договор с условиями работы, правок и передачи файлов.</span><span data-l="en">I prepare an
+                            estimate from the references. We agree on price and timing and sign a contract covering
+                            workflow, revisions and file handover.</span></p>
+                </div>
+                <div class="fr r"><span class="nm">03</span>
+                    <h4><span data-l="ru">Предоплата и материалы</span><span data-l="en">Prepayment & materials</span>
+                    </h4>
+                    <p><span data-l="ru">Работаю по предоплате. Клиент предоставляет логотип, фото продуктов, фирменные
+                            цвета и шрифт, референсы.</span><span data-l="en">I work on prepayment. The client provides
+                            the logo, product photos, brand colors and font, and references.</span></p>
+                </div>
+                <div class="fr r"><span class="nm">04</span>
+                    <h4><span data-l="ru">Препродакшн</span><span data-l="en">Pre-production</span></h4>
+                    <p><span data-l="ru">Разрабатываю концепцию, визуальное направление и мудборд.</span><span
+                            data-l="en">I develop the concept, visual direction and a mood board.</span></p>
+                </div>
+                <div class="fr r"><span class="nm">05</span>
+                    <h4><span data-l="ru">Постпродакшн</span><span data-l="en">Post-production</span></h4>
+                    <p><span data-l="ru">Создаю кадры, анимирую утверждённые варианты и собираю финал: монтаж,
+                            цветокоррекция, саунд-дизайн, инфографика.</span><span data-l="en">I create frames, animate
+                            approved ones and assemble the final: editing, color grading, sound design,
+                            infographics.</span></p>
+                </div>
+                <div class="fr r"><span class="nm">06</span>
+                    <h4><span data-l="ru">Согласование и передача</span><span data-l="en">Approval & delivery</span>
+                    </h4>
+                    <p><span data-l="ru">Согласуем результат, оплата, передача материалов.</span><span data-l="en">Final
+                            approval, payment and handover of materials.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s">
+        <h2 class="r"><span data-l="ru">Что входит в работу</span><span data-l="en">What is included</span></h2>
+        <p class="sub r"><span data-l="ru">Стоимость рассчитывается индивидуально после брифа.</span><span
+                data-l="en">Pricing is calculated individually after the brief.</span></p>
+        <div class="ic">
+            <div class="fr r">
+                <h4><span data-l="ru">AI-видео</span><span data-l="en">AI video</span></h4><small><span data-l="ru">2–7
+                        дней в зависимости от сложности</span><span data-l="en">2–7 days depending on
+                        complexity</span></small>
+                <ul>
+                    <li><span data-l="ru">Идея и сценарий: задачи ролика, концепция, референсы и визуальный
+                            стиль</span><span data-l="en">Idea & script: goals, concept, references and visual
+                            style</span></li>
+                    <li><span data-l="ru">Создание видео: генерация, анимация персонажей и объектов, динамика камеры,
+                            свет и атмосфера</span><span data-l="en">Video creation: generation, character and object
+                            animation, camera dynamics, light and mood</span></li>
+                    <li><span data-l="ru">Звуковое оформление: фон, озвучка, шумы и звуковые эффекты</span><span
+                            data-l="en">Sound: background, voiceover, ambience and sound effects</span></li>
+                    <li><span data-l="ru">Финальная обработка: цветокоррекция, монтаж, титры и логотипы, экспорт в
+                            нужном формате</span><span data-l="en">Finishing: color grading, editing, titles and logos,
+                            export in the required format</span></li>
+                </ul>
+                <p><span data-l="ru">Подходит для рекламы и промо, контента для соцсетей, презентаций и питчей,
+                        мероприятий и шоу.</span><span data-l="en">Suited to ads and promos, social content,
+                        presentations and pitches, events and shows.</span></p>
+            </div>
+            <div class="fr r">
+                <h4><span data-l="ru">AI-фото и визуал</span><span data-l="en">AI photo & visuals</span></h4>
+                <small><span data-l="ru">1–5 дней в зависимости от задачи</span><span data-l="en">1–5 days depending on
+                        the task</span></small>
+                <ul>
+                    <li><span data-l="ru">Концепция и референсы, образ, макияж, причёска и одежда</span><span
+                            data-l="en">Concept and references, look, makeup, hair and wardrobe</span></li>
+                    <li><span data-l="ru">Серия изображений в выбранном стиле: локация, фон, освещение</span><span
+                            data-l="en">A series in the chosen style: location, background, lighting</span></li>
+                    <li><span data-l="ru">AI-примерка одежды на вашем фото с сохранением посадки и текстур</span><span
+                            data-l="en">AI clothing try-on on your photo, keeping fit and texture</span></li>
+                    <li><span data-l="ru">Цветокоррекция, ретушь, файлы JPG / PNG в высоком разрешении для web и
+                            печати</span><span data-l="en">Color grading, retouching, high-resolution JPG / PNG files
+                            for web and print</span></li>
+                </ul>
+                <p><span data-l="ru">Форматы: отдельные изображения или пакет из 5 кадров в едином стиле.</span><span
+                        data-l="en">Formats: single images or a package of 5 frames in one style.</span></p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="ct" style="--h:url(assets/i34.webp)">
+        <h2 class="r"><span data-l="ru">Готовы обсудить проект и стоимость?</span><span data-l="en">Ready to discuss
+                your project and budget?</span></h2><a class="b" target="_blank" rel="noopener"
+            href="https://t.me/lyubovnovikovavideo">Telegram</a><a class="b o" target="_blank" rel="noopener"
+            href="https://www.instagram.com/novikovavideo">Instagram</a>
+    </section>
+    <footer><span data-l="ru">© 2026 Новикова Любовь. Все права защищены.<br>Копирование текстов, фото- и
+            видеоматериалов сайта без письменного разрешения запрещено.</span><span data-l="en">© 2026 Lyubov Novikova.
+            All rights reserved.<br>Copying of the site’s texts, photos and video materials without written permission
+            is prohibited.</span></footer>
+    <script>document.querySelectorAll("video[data-b]").forEach(v => { try { const a = atob(v.dataset.b), u = new Uint8Array(a.length); for (let i = 0; i < a.length; i++)u[i] = a.charCodeAt(i); v.src = URL.createObjectURL(new Blob([u], { type: "video/mp4" })); v.removeAttribute("data-b") } catch (e) { } }); const L = document.documentElement; function setL(l) { L.lang = l; try { localStorage.setItem('l', l) } catch (e) { } document.querySelectorAll('.lb button').forEach(b => b.classList.toggle('on', b.dataset.k == l)) }
+        let s; try { s = localStorage.getItem('l') } catch (e) { } setL(s || ((navigator.language || 'ru').slice(0, 2) == 'ru' ? 'ru' : 'en')); document.querySelectorAll('.lb button').forEach(b => b.onclick = () => setL(b.dataset.k));
+        document.querySelectorAll('.ar').forEach(b => b.onclick = () => { const c = b.parentNode.querySelector('.car'); c.scrollBy({ left: b.dataset.d * c.clientWidth * .8, behavior: 'smooth' }) });
+        const io = new IntersectionObserver(es => es.forEach(e => { const t = e.target; if (t.tagName == 'VIDEO') { e.isIntersecting ? t.play().catch(() => { }) : t.pause() } else if (e.isIntersecting) t.classList.add('in') }), { threshold: .15 }); document.querySelectorAll('.r,video').forEach(x => io.observe(x));
+        const sv = document.querySelector('.rv video'), sb = document.getElementById('snd'); sb.onclick = () => { sv.muted = !sv.muted; sv.play().catch(() => { }); sb.style.opacity = sv.muted ? 1 : .55 }; document.querySelectorAll('.cmp').forEach(c => { const i = c.querySelector('input'), t = c.querySelector('.top'), l = c.querySelector('.ln'), k = c.querySelector('.kn'); const f = () => { const v = i.value; t.style.clipPath = 'inset(0 0 0 ' + v + '%)'; l.style.left = k.style.left = v + '%' }; i.addEventListener('input', f); f() });</script>
+</body>
+
+</html>
